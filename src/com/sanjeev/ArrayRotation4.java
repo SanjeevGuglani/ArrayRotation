@@ -7,58 +7,56 @@ package com.sanjeev;
 class ArrayRotation4
 {
     /*Function to left rotate arr[] of siz n by d*/
-    void leftRotate(int arr[], int d, int n)
-    {
-        int i, j, k, temp;
-        int g= gcd(d, n);
-        System.out.println(g);
-        for (i = 0; i < gcd(d, n); i++)
-        {
-            /* move i-th values of blocks */
-            temp = arr[i];
-            j = i;
-            while (true)
-            {
-                k = j + d;
-                if (k >= n)
-                    k = k - n;
-                if (k == i)
-                    break;
-                arr[j] = arr[k];
-                j = k;
-                System.out.println("Inner :");
-                printArray(arr);
-            }
-            arr[j] = temp;
-            System.out.println("Outer :");
-             printArray(arr);
+    public static void arrayRotate(int arr[],int d){
+        int GCD = GCD(arr.length,d);
+        System.out.println(GCD);
+        for(int i=0;i<GCD;i++) {
+            rotateElementByGCD1234andSoOn(arr,i,d);
         }
     }
+
+    public static  void rotateElementByGCD1234andSoOn(int arr[],int beg,int d){
+        int temp=arr[beg];
+        int j=beg,k;
+        while(true){
+            k = j+d;
+            if(k>=arr.length){
+                k= k%arr.length;
+            }
+            if(k==beg) break;
+            arr[j]=arr[k];
+            j=k;
+        }
+        arr[j]=temp;
+    }
+
+
+    public static int GCD(int a,int b){
+        if(a==b)
+            return a;
+        else if(a>b){
+            return GCD(b,a-b);
+        }
+        return GCD(a,b-a);
+    }
+
 
     /*UTILITY FUNCTIONS*/
 
     /* function to print an array */
-    public  void  printArray(int arr[]){
+    public  static void  printArray(int arr[]){
         for(int i=0;i<arr.length;i++){
             System.out.print(" "+arr[i]);
         }
         System.out.println();
     }
 
-    /*Fuction to get gcd of a and b*/
-    int gcd(int a, int b)
-    {
-        if (b == 0)
-            return a;
-        else
-            return gcd(b, a % b);
-    }
 
     // Driver program to test above functions
     public static void main(String[] args) {
         ArrayRotation4 rotate = new ArrayRotation4();
         int arr[] = {1, 2, 3, 4, 5, 6};
-        rotate.leftRotate(arr, 4, 6);
+        rotate.arrayRotate(arr, 4);
         rotate.printArray(arr);
     }
 }
