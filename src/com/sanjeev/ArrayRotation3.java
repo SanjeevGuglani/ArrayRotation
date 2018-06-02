@@ -5,7 +5,7 @@ package com.sanjeev;
  */
 
 
-//THIS METHOD ONLY WORKS IF array length is divisible by D. 
+//THIS METHOD ONLY WORKS IF array length is divisible by D.
 public class ArrayRotation3 {
 
     public static void arrayRotate(int arr[],int d){

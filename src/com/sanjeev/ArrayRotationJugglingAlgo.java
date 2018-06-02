@@ -4,7 +4,7 @@ package com.sanjeev;
  * Created by Sanjeev Guglani
  */
 // Juggling Algorithm
-class ArrayRotation4
+class ArrayRotationJugglingAlgo
 {
     /*Function to left rotate arr[] of siz n by d*/
     public static void arrayRotate(int arr[],int d){
@@ -54,7 +54,7 @@ class ArrayRotation4
 
     // Driver program to test above functions
     public static void main(String[] args) {
-        ArrayRotation4 rotate = new ArrayRotation4();
+        ArrayRotationJugglingAlgo rotate = new ArrayRotationJugglingAlgo();
         int arr[] = {1, 2, 3, 4, 5, 6};
         rotate.arrayRotate(arr, 4);
         rotate.printArray(arr);
