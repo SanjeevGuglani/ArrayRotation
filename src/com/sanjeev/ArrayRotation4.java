@@ -3,7 +3,7 @@ package com.sanjeev;
 /**
  * Created by Sanjeev Guglani
  */
-//Juggling Algorithm
+// Juggling Algorithm
 class ArrayRotation4
 {
     /*Function to left rotate arr[] of siz n by d*/
