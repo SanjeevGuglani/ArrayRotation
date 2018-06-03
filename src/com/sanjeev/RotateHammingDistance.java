@@ -3,6 +3,7 @@ package com.sanjeev;
 /**
  * Created by Sanjeev Guglani
  */
+//Find Out maximum Hamming distance By Rotating an Array
 public class RotateHammingDistance {
 
     public static  int rotateHammingDistance(int arr[]){
