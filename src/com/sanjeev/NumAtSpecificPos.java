@@ -77,18 +77,36 @@ public class NumAtSpecificPos {
         }
     }
 
+    public static void method5(int arr[]){
+       for(int i=0;i<arr.length;i++){
+           if(arr[i]!=-1 && arr[i]!=i){
+               int j=arr[i];
+               arr[i]=-1;
+               while(arr[j]!=-1){
+                   int temp=arr[j];
+                   arr[j]=j;
+                   j=temp;
+               }
+                arr[j]=j;
+           }
+       }
+    }
+
     public static void main(String[] args) {
         int arr[]= {-1, -1, 6, 1, 9, 3, 2, -1, 4, -1};
         method1(arr);
         System.out.println(Arrays.toString(arr));
         int arr2[]= new int[]{-1, -1, 6, 1, 9, 3, 2, -1, 4, -1};
         method2(arr2);
-        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr2));
         int arr3[]= new int[]{-1, -1, 6, 1, 9, 3, 2, -1, 4, -1};
         method3(arr3);
-        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr3));
         int arr4[]= new int[]{-1, -1, 6, 1, 9, 3, 2, -1, 4, -1};
         method4(arr4);
-        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr4));
+        int arr5[]= new int[]{-1, -1, 6, 1, 9, 3, 2, -1, 4, -1};
+        method5(arr5);
+        System.out.println(Arrays.toString(arr5));
     }
 }
